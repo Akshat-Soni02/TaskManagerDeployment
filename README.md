@@ -11,6 +11,7 @@ You can view the detailed documentation for the project [here](https://documente
 You can access the live deployment of the project at the following link:
 
 - [Project Deployment](https://taskmanager-frontend-tb48.onrender.com/)
+- Note - due to deployment on render, the server doesn't start for first few minutes after a request is sent.
 
 ## Features
 
