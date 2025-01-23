@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo&family=Noto+Sans&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.loginSection {
+    background-color: #1e1e1e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.lform {
+    background-color: #2b2b2b;
+    padding: 2rem;
+    width: clamp(230px, 80vw, 350px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 8px;
+    font-family: 'Cairo', sans-serif;
+    box-shadow: 0.5px 0.5px 12px 0.2px rgba(0, 0, 0, 0.8);
+}
+
+.lform-intro {
+    text-align: center;
+}
+
+.lform-icon {
+    font-size: 1.7rem;
+    color: #4D62FD;
+}
+
+.lform-title {
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+    color: #f0f0f0;
+}
+
+.lform-subtitle {
+    font-size: 0.95rem;
+    color: #b3b3b3;
+    margin-bottom: 15px;
+    padding: 0;
+}
+
+.lform-fields {
+    width: 100%;
+}
+
+.lform-fieldname {
+    color: #b3b3b3;
+}
+
+.lform-field-input {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    width: 100%;
+    border-bottom: 1px solid #555;
+    color: #e0e0e0;
+    font-family: 'Cairo', sans-serif;
+    font-size: 1rem;
+}
+
+.lform-field-input-container {
+    position: relative;
+}
+
+.lform-fieldIcon {
+    position: absolute;
+    bottom: 13px;
+    right: 0;
+    color: #555;
+}
+
+.eye {
+    bottom: 10px;
+}
+
+.lform-authAction {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    font-size: clamp(9.6px, 3.3vw, 14px);
+    cursor: pointer;
+    margin-bottom: 20px;
+    color: #b3b3b3;
+}
+
+.lform-authAction:hover, .lform-authAction:focus {
+    opacity: 0.85;
+}
+
+.lform-authAction-signup {
+    color: #b3b3b3;
+}
+
+.lform-authAction-forgot {
+    color: #4D62FD;
+}
+
+.lform-login-button {
+    padding: 0.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #4D62FD;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    min-width: 80px;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.lform-login-button:hover, .lform-login-button:focus {
+    background-color: #4d61fdd5;
+}
+
+.lform-line-text-line {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.or-text {
+    position: relative;
+    display: inline-block;
+    padding: 0 10px;
+    background-color: #2b2b2b;
+    z-index: 1;
+    color: #b3b3b3;
+}
+
+.or-text::before,
+.or-text::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 65px;
+    height: 1px;
+    background-color: #555;
+}
+
+.or-text::before {
+    right: 100%;
+}
+
+.or-text::after {
+    left: 100%;
+}
+
+.lform-thirdPartyLogin {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    font-size: 1.5rem;
+}
+
+.fb {
+    color: #4867AA;
+}
+
+.twt {
+    color: #1DA1F2;
+}
+
+.ic:hover, .ic:focus {
+    border-bottom: 1px solid #888;
+}

@@ -1,0 +1,90 @@
+.editCardBody {
+  background: #252525;
+  border-radius: 10px;
+  border: 1px solid rgba(100, 100, 100, 0.5);
+  width: 500px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  padding: 1rem;
+  color: #dcdcdc;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.cardEditForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.formLabel {
+  font-weight: bold;
+  font-size: 1rem;
+  color: #bbbbbb;
+}
+
+.formInput {
+  padding: 0.5rem;
+  border: 1px solid rgba(120, 120, 120, 0.7);
+  border-radius: 5px;
+  background-color: #2f2f2f;
+  color: #e5e5e5;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.formInput:focus {
+  border-color: #4a90e2;
+  outline: none;
+  background-color: #333;
+}
+
+.formTextArea {
+  padding: 0.5rem;
+  border: 1px solid rgba(120, 120, 120, 0.7);
+  border-radius: 5px;
+  background-color: #2f2f2f;
+  color: #e5e5e5;
+  font-size: 1rem;
+  min-height: 100px;
+  max-height: 300px;
+  overflow-y: auto;
+  resize: none;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.formTextArea:focus {
+  border-color: #4a90e2;
+  outline: none;
+  background-color: #333;
+}
+
+.submitButton {
+  padding: 0.7rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #1a73e8;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.submitButton:hover {
+  background-color: #165cb8;
+  transform: scale(1.03);
+}
+
+.submitButton:focus {
+  outline: none;
+  background-color: #144a96;
+}

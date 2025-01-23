@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo&family=Noto+Sans&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.signupSection {
+    background-color: #1e1e1e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.sform {
+    background-color: #2b2b2b;
+    padding: 2rem;
+    width: clamp(230px, 80vw, 350px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 8px;
+    font-family: 'Cairo', sans-serif;
+    box-shadow: 0.5px 0.5px 12px 0.2px rgba(0, 0, 0, 0.8);
+}
+
+.sform-intro {
+    text-align: center;
+}
+
+.sform-icon {
+    font-size: 3.5rem;
+    color: #4D62FD;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.sform-icon:hover {
+    filter: brightness(1.2);
+}
+
+.sform-prof-img {
+    width: 60px;
+    height: 60px;
+}
+
+.sform-title {
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 8px;
+    color: #f0f0f0;
+}
+
+.sform-subtitle {
+    font-size: 0.95rem;
+    color: #b3b3b3;
+    margin-bottom: 15px;
+    padding: 0;
+}
+
+.sform-fields {
+    width: 100%;
+}
+
+.sform-fieldname {
+    color: #b3b3b3;
+}
+
+.sform-field-input {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    width: 100%;
+    border-bottom: 1px solid #555;
+    color: #e0e0e0;
+    font-family: 'Cairo', sans-serif;
+    font-size: 1rem;
+}
+
+.sform-field-input-container {
+    position: relative;
+}
+
+.sform-fieldIcon {
+    position: absolute;
+    bottom: 13px;
+    right: 0;
+    color: #555;
+}
+
+.eye {
+    bottom: 10px;
+}
+
+.sform-authAction {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    font-size: clamp(9.6px, 3.3vw, 14px);
+    cursor: pointer;
+    margin-bottom: 20px;
+    color: #b3b3b3;
+}
+
+.sform-authAction:hover, .sform-authAction:focus {
+    opacity: 0.85;
+}
+
+.sform-authAction-signup {
+    color: #b3b3b3;
+}
+
+.sform-authAction-forgot {
+    color: #4D62FD;
+}
+
+.sform-buttons {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.sform-login-button {
+    padding: clamp(5px, 1.6vw, 6.4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #4D62FD;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    min-width: 80px;
+    font-size: clamp(13px, 4.5vw, 17.6px);
+    transition: background-color 0.3s ease;
+}
+
+.sform-login-button:hover, .sform-login-button:focus {
+    background-color: #4d61fdd5;
+}
+
+.sform-line-text-line {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.or-text {
+    position: relative;
+    display: inline-block;
+    padding: 0 10px;
+    background-color: #2b2b2b;
+    z-index: 1;
+    color: #b3b3b3;
+}
+
+.or-text::before,
+.or-text::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 65px;
+    height: 1px;
+    background-color: #555;
+}
+
+.or-text::before {
+    right: 100%;
+}
+
+.or-text::after {
+    left: 100%;
+}
+
+.sform-thirdPartyLogin {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    font-size: 1.5rem;
+}
+
+.fb {
+    color: #4867AA;
+}
+
+.twt {
+    color: #000000;
+}
+
+.ic:hover, .ic:focus {
+    border-bottom: 1px solid #888;
+}
+
+.loadScreen {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    place-content: center;
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+}
