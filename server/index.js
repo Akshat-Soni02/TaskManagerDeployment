@@ -15,7 +15,7 @@ const URI = process.env.MONGO_URI;
 
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: "https://taskmanager-frontend-tb48.onrender.com",
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS", "HEAD"],
     credentials: true,
   })
