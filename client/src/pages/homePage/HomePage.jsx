@@ -14,7 +14,7 @@ const HomePage = () => {
   const [isTaskCreated, setIsTaskCreated] = useState(false);
   const [tasks, setTasks] = useState([]);
   const [editTaskId, setEditTaskId] = useState(null);
-  const { isAuthenticated,setIsAuthenticated, setUser, logout} = useAuth();
+  const { isAuthenticated, setIsAuthenticated, setUser, logout } = useAuth();
   const navigate = useNavigate();
 
   const openModal = () => setIsModalOpen(true);
@@ -28,10 +28,10 @@ const HomePage = () => {
       const data = await fetchTasks();
       setTasks(data);
       setTimeout(() => {
-        console.log('Fetched data:', data);
+        console.log("Fetched data:", data);
       }, 2000);
     } catch (error) {
-      console.error('Failed to fetch tasks:', error);
+      console.error("Failed to fetch tasks:", error);
     }
   };
 
@@ -47,59 +47,73 @@ const HomePage = () => {
       navigate("/login");
       setUser(null);
     }
-  }
+  };
 
-  const logoutAction = async() => {
+  const logoutAction = async () => {
     try {
       await logout();
       navigate("/login");
     } catch (error) {
-      console.log("error here cmmon even in logout")
+      console.log("error here cmmon even in logout");
     }
-  }
-  
+  };
 
-  useEffect(()=> {
+  useEffect(() => {
     const checkAuth = async () => {
       await fetchMyProfile();
     };
     checkAuth();
     fetching();
-    console.log(isAuthenticated)
-  },[])
-
-  
+    console.log(isAuthenticated);
+  }, []);
 
   return (
     <>
       <div className="homePage">
         {isModalOpen && (
           <Modal onClose={closeModal}>
-            <CardEdit id={editTaskId} closeModal={closeModal} setTasks={setTasks}/>
+            <CardEdit
+              id={editTaskId}
+              closeModal={closeModal}
+              setTasks={setTasks}
+            />
           </Modal>
         )}
         {isTaskCreated && (
           <Modal onClose={closeCreate}>
-            <CardCreate closeCreate={closeCreate} setTasks={setTasks}/>
+            <CardCreate closeCreate={closeCreate} setTasks={setTasks} />
           </Modal>
         )}
         <div className="homePageHeader">
           <div className="homeHeaderContent">
             <h1 className="homeTitle">Task Manager</h1>
-            <div className="logoutButton" onClick={logoutAction}>Logout</div>
+            <div className="logoutButton" onClick={logoutAction}>
+              Logout
+            </div>
           </div>
         </div>
 
         <div className="homePageBody">
           <div className="taskCards">
-            {tasks.map((cur) => <Card key={cur._id} id={cur._id} openModal={openModal} title={cur.title} description={cur.description} status={cur.status} setEditTaskId={setEditTaskId} fetching={fetching}/>)}
+            {tasks.map((cur) => (
+              <Card
+                key={cur._id}
+                id={cur._id}
+                openModal={openModal}
+                title={cur.title}
+                description={cur.description}
+                status={cur.status}
+                setEditTaskId={setEditTaskId}
+                fetching={fetching}
+              />
+            ))}
           </div>
-          <div className="createTaskButton" onClick={openCreate}><IoAdd /></div>
+          <div className="createTaskButton" onClick={openCreate}>
+            <IoAdd />
+          </div>
         </div>
-    </div>
-
+      </div>
     </>
-    
   );
 };
 
