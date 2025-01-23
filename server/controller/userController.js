@@ -7,7 +7,8 @@ export const login = async (req, res, next) => {
   try {
     const { email, password } = req.body;
     const curUser = await user.findOne({ email }).select("+password");
-    if (!curUser) return next(new ErrorHandler("Invalid Email or Password", 404));
+    if (!curUser)
+      return next(new ErrorHandler("Invalid Email or Password", 404));
     const isMatch = await bcrypt.compare(password, curUser.password);
     if (!isMatch) return next(new ErrorHandler("Invalid Password", 404));
     sendCookie(curUser, res, `Hey ${curUser.name} glad to have you back`, 200);
@@ -47,8 +48,8 @@ export const logout = async (req, res) => {
     .status(200)
     .cookie("token", "", {
       expires: new Date(Date.now()),
-      // sameSite: "none",
-      // secure: false
+      sameSite: "none",
+      secure: true,
     })
     .json({
       success: true,
@@ -67,7 +68,7 @@ export const updateUserDetails = async (req, res, next) => {
     }
 
     if (updatedDetails.name) {
-        curUser.name = updatedDetails.name;
+      curUser.name = updatedDetails.name;
     }
     await curUser.save();
     return res.status(200).json({ message: "Details updated successfully" });
